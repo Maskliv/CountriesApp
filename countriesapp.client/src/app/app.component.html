@@ -1,0 +1,21 @@
+﻿<div class="container">
+  <h1 id="tableLabel">Api Paises</h1>
+  <search-bar (searchEvent)="handleSearch($event)" #searchComponent></search-bar>
+  <button class="btn btn-success mt-3" (click)="clearSearch()">Listado completo</button>
+  <countries-table [countriesData]="countries" *ngIf="result && countries.length > 0">
+  </countries-table>
+
+
+  <div class="text-center mt-5" *ngIf="!result">
+    <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <div class="text-center mt-5" *ngIf="result && countries.length<=0">
+    <span>No se encontró resultados</span>
+  </div>
+</div>
+
+
+

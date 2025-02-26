@@ -1,0 +1,30 @@
+<div class="row mt-3 align-items-center justify-content-center">
+  <!-- <div class="input-group mb-3 col-auto"> -->
+  <div class="input-group mb-3 col-auto">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Buscar..."
+      aria-label="Search"
+      [(ngModel)]="searchInput.input"
+      (keyup.enter)="onSearch()"/>
+    <div class="input-group-append ms-3">
+      <button class="btn btn-outline-secondary" type="button" (click)="onSearch()">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </div>
+  <div class="form-check col-auto">
+    <input class="form-check-input" type="radio" name="flexRadio" id="radioRegion" [value]="'region'" [(ngModel)]="searchInput.type" checked>
+    <label class="form-check-label" for="radioRegion">
+      Buscar por continente
+    </label>
+  </div>
+  <div class="form-check col-auto">
+    <input class="form-check-input" type="radio" name="flexRadio" id="radioName"  [value]="'name'" [(ngModel)]="searchInput.type">
+    <label class="form-check-label" for="radioName">
+      Buscar por nombre
+    </label>
+  </div>
+  
+</div>
