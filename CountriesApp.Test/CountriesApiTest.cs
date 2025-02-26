@@ -108,7 +108,7 @@ public class CountriesApiTests
         var response = await _httpClient.GetAsync($"api/{COUNTRIES_GETBYNAME}/Colombia");
 
         // Assert
-        Assert.That(response.IsSuccessStatusCode, Is.True, "Get by region bad response. Status code: " + response.StatusCode);
+        Assert.That(response.IsSuccessStatusCode, Is.True, "Get by name bad response. Status code: " + response.StatusCode);
 
 
         var content = await response.Content.ReadAsStringAsync();
